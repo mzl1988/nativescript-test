@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ApplicationProperties</key>
+	<dict>
+		<key>ApplicationPath</key>
+		<string>Applications/tnstest.app</string>
+		<key>CFBundleIdentifier</key>
+		<string>org.nativescript.tnstest</string>
+		<key>CFBundleShortVersionString</key>
+		<string>1.0</string>
+		<key>CFBundleVersion</key>
+		<string>1.0</string>
+		<key>SigningIdentity</key>
+		<string>iPhone Developer: Sunny Lee (39JQE74U34)</string>
+		<key>Team</key>
+		<string>TY74DSG325</string>
+	</dict>
+	<key>ArchiveVersion</key>
+	<integer>2</integer>
+	<key>CreationDate</key>
+	<date>2019-01-11T09:26:43Z</date>
+	<key>Name</key>
+	<string>tnstest</string>
+	<key>SchemeName</key>
+	<string>tnstest</string>
+</dict>
+</plist>

@@ -1,0 +1,31 @@
+.bottom-tabs {
+    height: 52;
+    text-align: center;
+    background-color: #f8f8f8;
+    border-top-color: #dae1e7;
+    border-top-width: 0.5;
+}
+
+.bottom-tabs .bottom-tabs-item {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bottom-tabs .bottom-tabs-item .ion,
+.bottom-tabs .bottom-tabs-item .label {
+    color: #8c8c8c;
+}
+
+.bottom-tabs .bottom-tabs-item .ion {
+    font-size: 30;
+}
+
+.bottom-tabs .bottom-tabs-item .label {
+    font-size: 10;
+}
+
+.bottom-tabs .bottom-tabs-item.selected .ion,
+.bottom-tabs .bottom-tabs-item.selected .label {
+    color: #3d5afe;
+}

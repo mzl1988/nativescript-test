@@ -1,0 +1,1 @@
+/Users/admin/Documents/tns/tns-test/platforms/android/app/src/main/java

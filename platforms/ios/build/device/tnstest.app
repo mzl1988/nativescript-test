@@ -1,0 +1,1 @@
+/Users/admin/Library/Developer/Xcode/DerivedData/tnstest-dppvbinigeskeuehzyygwgieugyy/Build/Intermediates.noindex/ArchiveIntermediates/tnstest/InstallationBuildProductsLocation/Applications/tnstest.app
