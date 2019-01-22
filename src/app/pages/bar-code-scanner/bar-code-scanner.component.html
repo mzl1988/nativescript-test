@@ -1,0 +1,10 @@
+<GridLayout rows="auto, *">
+    <StackLayout row="0">
+        <HeaderBar [title]="title"></HeaderBar>
+    </StackLayout>
+    <StackLayout row="1">
+        <Button text="test" (tap)="scanTapped()"></Button>
+        <Label *ngIf="scanResult" text="{{scanResult.format}}: {{scanResult.text}}" textWrap="true"></Label>
+        
+    </StackLayout>
+</GridLayout>

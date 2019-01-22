@@ -3,8 +3,6 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { ItemsComponent } from "./item/items.component";
-import { ItemDetailComponent } from "./item/item-detail.component";
 import { LabelMaxLinesDirective } from './directives';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -23,8 +21,6 @@ import { LabelMaxLinesDirective } from './directives';
     ],
     declarations: [
         AppComponent,
-        ItemsComponent,
-        ItemDetailComponent,
         LabelMaxLinesDirective
     ],
     providers: [],

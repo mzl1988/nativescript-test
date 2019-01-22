@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
     selector: "BottomTabs",
@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class BottomTabsComponent implements OnInit {
     @Input() selectTabIndex = 0;
+    @Output() selectTabEvent: EventEmitter<number> = new EventEmitter();
 
     constructor(
     ) { }
@@ -18,5 +19,6 @@ export class BottomTabsComponent implements OnInit {
 
     onTabItemTap(index: number) {
         this.selectTabIndex = index;
+        this.selectTabEvent.emit(index);
     }
 }

@@ -2,9 +2,6 @@ import { NgModule } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 
-import { ItemsComponent } from "./item/items.component";
-import { ItemDetailComponent } from "./item/item-detail.component";
-
 const routes: Routes = [
     { path: "", redirectTo: "/login", pathMatch: "full" },
     {
@@ -15,8 +12,10 @@ const routes: Routes = [
         path: "home",
         loadChildren: "~/app/pages/home/home.module#HomeModule"
     },
-    { path: "items", component: ItemsComponent },
-    { path: "item/:id", component: ItemDetailComponent },
+    {
+        path: "bar-code-scanner",
+        loadChildren: "~/app/pages/bar-code-scanner/bar-code-scanner.module#BarCodeScannerModule"
+    }
 ];
 
 @NgModule({

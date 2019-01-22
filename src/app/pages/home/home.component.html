@@ -3,9 +3,21 @@
         <HeaderBar [title]="title" [hiddenBack]="hiddenBack"></HeaderBar>
     </StackLayout>
     <StackLayout row="1">
-        <Label text="home page" textWrap="true"></Label>
+        <StackLayout visibility="{{ selectTabIndex === 0 ? 'visible' : 'collapsed' }}">
+            <Label text="Home" textWrap="true"></Label>
+        </StackLayout>
+        <StackLayout visibility="{{ selectTabIndex === 1 ? 'visible' : 'collapsed' }}">
+            <ListView [items]="items" class="list-group">
+                <ng-template let-item="item">
+                    <Label [nsRouterLink]="['/bar-code-scanner']" pageTransition="slide" [text]="item.name" class="list-group-item"></Label>
+                </ng-template>
+            </ListView>
+        </StackLayout>
+        <StackLayout visibility="{{ selectTabIndex === 2 ? 'visible' : 'collapsed' }}">
+            <Label text="Mine" textWrap="true"></Label>
+        </StackLayout>
     </StackLayout>
     <StackLayout row="2">
-        <BottomTabs></BottomTabs>
+        <BottomTabs [selectTabIndex]="selectTabIndex" (selectTabEvent)="tabTap($event)"></BottomTabs>
     </StackLayout>
 </GridLayout>
