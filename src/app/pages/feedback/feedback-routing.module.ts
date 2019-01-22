@@ -2,14 +2,14 @@ import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
-import { BarCodeScannerComponent } from "./bar-code-scanner.component";
+import { FeedbackComponent } from "./feedback.component";
 
 const routes: Routes = [
-    { path: "", component: BarCodeScannerComponent }
+    { path: "", component: FeedbackComponent }
 ];
 
 @NgModule({
     imports: [NativeScriptRouterModule.forChild(routes)],
     exports: [NativeScriptRouterModule]
 })
-export class BarCodeScannerRoutingModule { }
+export class FeedbackRoutingModule { }

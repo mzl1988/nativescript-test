@@ -9,7 +9,7 @@
         <StackLayout visibility="{{ selectTabIndex === 1 ? 'visible' : 'collapsed' }}">
             <ListView [items]="items" class="list-group">
                 <ng-template let-item="item">
-                    <Label [nsRouterLink]="['/bar-code-scanner']" pageTransition="slide" [text]="item.name" class="list-group-item"></Label>
+                    <Label [nsRouterLink]="[item.router]" pageTransition="slide" [text]="item.name" class="list-group-item"></Label>
                 </ng-template>
             </ListView>
         </StackLayout>

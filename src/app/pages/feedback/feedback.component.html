@@ -1,0 +1,15 @@
+<GridLayout rows="auto, *">
+    <StackLayout row="0">
+        <HeaderBar [title]="title"></HeaderBar>
+    </StackLayout>
+    <StackLayout row="1">
+        <Button text="Success, 2.5s" (tap)="showSuccess()" class="btn btn-primary"></Button>
+        <Button text="Success, black text" (tap)="showSuccessAltColors()" class="btn btn-primary"></Button>
+        <Button text="Info, 2s" (tap)="showInfo()" class="btn btn-primary"></Button>
+        <Button text="Warning, 4s" (tap)="showWarning()" class="btn btn-primary"></Button>
+        <Button text="Error, 1s" (tap)="showError()" class="btn btn-primary"></Button>
+        <Button text="Error, 5s, Bottom (iOS)" (tap)="showErrorBottom()" class="btn btn-primary"></Button>
+        <Button text="No icon" (tap)="showNoIcon()" class="btn btn-primary"></Button>
+        <Button text="Hide!" (tap)="hide()" class="btn btn-primary"></Button>
+    </StackLayout>
+</GridLayout>

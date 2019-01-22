@@ -3,7 +3,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/login", pathMatch: "full" },
+    { path: "", redirectTo: "/home", pathMatch: "full" },
     {
         path: "login",
         loadChildren: "~/app/pages/login/login.module#LoginModule"
@@ -13,8 +13,8 @@ const routes: Routes = [
         loadChildren: "~/app/pages/home/home.module#HomeModule"
     },
     {
-        path: "bar-code-scanner",
-        loadChildren: "~/app/pages/bar-code-scanner/bar-code-scanner.module#BarCodeScannerModule"
+        path: "feedback",
+        loadChildren: "~/app/pages/feedback/feedback.module#FeedbackModule"
     }
 ];
 
