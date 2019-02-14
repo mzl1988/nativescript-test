@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import * as app from "application";
+import * as app from "tns-core-modules/application";
 import { device } from "tns-core-modules/platform";
 declare let android: any;
 
