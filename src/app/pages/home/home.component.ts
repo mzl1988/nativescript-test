@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewInit } from "@angular/core";
-import { GlobalService } from "../../services";
 @Component({
     selector: "Home",
     moduleId: module.id,
@@ -10,13 +9,13 @@ export class HomeComponent implements AfterViewInit, OnInit {
     drawerComponent: any;
     title = 'Home';
     hiddenBack = true;
+    hiddenMenu = false;
     selectTabIndex = 0;
     items = new Array<any>(
         { id: 0, name: "feedback", router: "/feedback" }
     );
 
     constructor(
-        private globalService: GlobalService
     ) {
     }
 
@@ -24,10 +23,6 @@ export class HomeComponent implements AfterViewInit, OnInit {
     }
 
     ngAfterViewInit() {
-    }
-
-    openDrawer() {
-        this.globalService.rootSideDrawerEvent.emit("openDrawer");
     }
 
     tabTap(index: number) {

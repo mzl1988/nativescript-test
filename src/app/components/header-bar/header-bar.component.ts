@@ -3,6 +3,7 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { Page } from "tns-core-modules/ui/page";
 import * as app from "tns-core-modules/application";
 import { screen, device } from "tns-core-modules/platform";
+import { GlobalService } from "../../services";
 @Component({
     selector: "HeaderBar",
     moduleId: module.id,
@@ -11,13 +12,15 @@ import { screen, device } from "tns-core-modules/platform";
 })
 export class HeaderBarComponent implements OnInit {
     @Input() hiddenBack = false;
+    @Input() hiddenMenu = true;
     @Input() title = 'Title';
     screenWidth: number;
     statusHeight = 0;
 
     constructor(
         private routerExtensions: RouterExtensions,
-        private page: Page
+        private page: Page,
+        private globalService: GlobalService
     ) { }
 
     ngOnInit(): void {
@@ -33,5 +36,9 @@ export class HeaderBarComponent implements OnInit {
 
     goBack() {
         this.routerExtensions.backToPreviousPage();
+    }
+
+    openMenu() {
+        this.globalService.rootSideDrawerEvent.emit("openDrawer");
     }
 }

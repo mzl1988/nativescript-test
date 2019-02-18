@@ -1,25 +1,29 @@
 <!-- https://docs.nativescript.org/angular/core-concepts/angular-navigation.html#page-router-outlet -->
 
 
-<RadSideDrawer>
-    <StackLayout tkDrawerContent class="sideStackLayout">
-        <StackLayout class="sideTitleStackLayout">
-            <Label text="Navigation Menu"></Label>
-        </StackLayout>
-        <ScrollView>
-            <StackLayout class="sideStackLayout">
-                <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
-                <Label text="Social" class="sideLabel"></Label>
-                <Label text="Promotions" class="sideLabel"></Label>
-                <Label text="Labels" class="sideLabel sideLightGrayLabel"></Label>
-                <Label text="Important" class="sideLabel"></Label>
-                <Label text="Starred" class="sideLabel"></Label>
-                <Label text="Sent Mail" class="sideLabel"></Label>
-                <Label text="Drafts" class="sideLabel"></Label>
-                <Label text="Close Drawer" color="lightgray" padding="10" style="horizontal-align: center"
-                    (tap)="onCloseDrawerTap()"></Label>
+<RadSideDrawer [allowEdgeSwipe]="allowEdgeSwipe">
+    <StackLayout tkDrawerContent class="sideStackBox">
+        <GridLayout rows="auto, *">
+            <StackLayout row="0">
+                <StackLayout class="headerPaddingTop" [ngStyle]="{'height': statusHeight}"></StackLayout>
+                <FlexboxLayout class="sideTitleStackLayout">
+                    <Label text="Menu"></Label>
+                </FlexboxLayout>
             </StackLayout>
-        </ScrollView>
+            <ScrollView row="1" class="sideStackLayout">
+                <StackLayout>
+                    <Label text="Primary" class="sideLabel" (tap)="toPage()"></Label>
+                    <Label text="Social" class="sideLabel" (tap)="toPage()"></Label>
+                    <Label text="Promotions" class="sideLabel" (tap)="toPage()"></Label>
+                    <Label text="Labels" class="sideLabel" (tap)="toPage()"></Label>
+                    <Label text="Important" class="sideLabel" (tap)="toPage()"></Label>
+                    <Label text="Starred" class="sideLabel" (tap)="toPage()"></Label>
+                    <Label text="Sent Mail" class="sideLabel" (tap)="toPage()"></Label>
+                    <Label text="Drafts" class="sideLabel" (tap)="toPage()"></Label>
+                </StackLayout>
+            </ScrollView>
+        </GridLayout>
+
     </StackLayout>
     <StackLayout tkMainContent>
         <page-router-outlet></page-router-outlet>

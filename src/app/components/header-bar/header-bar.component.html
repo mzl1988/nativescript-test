@@ -2,6 +2,7 @@
 <FlexboxLayout class="header-bar">
     <FlexboxLayout class="left-content">
         <Label class="ion back-btn" text="&#xf3d2;" *ngIf="!hiddenBack" (tap)="goBack()"></Label>
+        <Label class="ion menu-btn" text="&#xf20e;" *ngIf="!hiddenMenu" (tap)="openMenu()"></Label>
     </FlexboxLayout>
     <FlexboxLayout class="title-content" [ngStyle]="{width: screenWidth - 180}">
         <Label class="title" [text]="title" textWrap="false"></Label>

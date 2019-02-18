@@ -1,11 +1,10 @@
 <GridLayout rows="auto, *, auto">
     <StackLayout row="0">
-        <HeaderBar [title]="title" [hiddenBack]="hiddenBack"></HeaderBar>
+        <HeaderBar [title]="title" [hiddenBack]="hiddenBack" [hiddenMenu]="hiddenMenu"></HeaderBar>
     </StackLayout>
     <StackLayout row="1">
         <StackLayout visibility="{{ selectTabIndex === 0 ? 'visible' : 'collapsed' }}">
             <Label text="Home" textWrap="true"></Label>
-            <Button text="Open Drawer" (tap)="openDrawer()" class="btn btn-primary"></Button>
         </StackLayout>
         <StackLayout visibility="{{ selectTabIndex === 1 ? 'visible' : 'collapsed' }}">
             <ListView [items]="items" class="list-group">

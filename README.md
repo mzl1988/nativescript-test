@@ -7,3 +7,7 @@
 ## ionicons
 
 * https://ionicons.com/v2/
+
+## nativescript-ui
+
+* https://docs.nativescript.org/ui/professional-ui-components/overview

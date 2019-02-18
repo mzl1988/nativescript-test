@@ -1,8 +1,10 @@
 import { Component, ViewChild, OnInit, AfterViewInit, ChangeDetectorRef } from "@angular/core";
+import { NavigationEnd, Router } from '@angular/router';
 import { RadSideDrawerComponent } from "nativescript-ui-sidedrawer/angular";
-import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
+import { RadSideDrawer, RevealTransition } from 'nativescript-ui-sidedrawer';
 import * as app from "tns-core-modules/application";
 import { device } from "tns-core-modules/platform";
+import { Color } from "tns-core-modules/color";
 import { GlobalService } from "./services";
 declare let android: any;
 
@@ -14,14 +16,25 @@ declare let android: any;
 })
 export class AppComponent implements OnInit, AfterViewInit {
     @ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
-    private drawer: RadSideDrawer;
+    drawer: RadSideDrawer;
+    allowEdgeSwipe = false;
+    statusHeight = 0;
+
     constructor(
+        private router: Router,
         private globalService: GlobalService,
         private _changeDetectionRef: ChangeDetectorRef
     ) {
         this.globalService.rootSideDrawerEvent.subscribe((value: string) => {
             if (value === 'openDrawer') {
                 this.openDrawer();
+            }
+        });
+
+        this.router.events.subscribe((event: any) => {
+            if (event instanceof NavigationEnd) {
+                console.log(event);
+                event.urlAfterRedirects.indexOf('/home') > -1 ? this.allowEdgeSwipe = true : this.allowEdgeSwipe = false;
             }
         });
     }
@@ -38,12 +51,15 @@ export class AppComponent implements OnInit, AfterViewInit {
                 // | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
                 | android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
             );
+            this.statusHeight = 26;
         }
 
     }
 
     ngAfterViewInit() {
         this.drawer = this.drawerComponent.sideDrawer;
+        this.drawer.drawerTransition = new RevealTransition();
+        this.drawer.shadowColor = new Color('#203d5afe');
         this._changeDetectionRef.detectChanges();
     }
 
@@ -54,5 +70,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     onCloseDrawerTap() {
         this.drawer.closeDrawer();
+    }
+
+    toPage() {
+        this.onCloseDrawerTap();
     }
 }
